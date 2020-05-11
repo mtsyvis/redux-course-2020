@@ -1,5 +1,5 @@
-export function createStore(rootReducer) {
-    let state = {};
+export function createStore(rootReducer, initialState) {
+    let state = rootReducer(initialState, { type: '__INIT__' });
     const subscribers = [];
 
     // we should use замыкания because js don't have privite methods. There are public methods after return
