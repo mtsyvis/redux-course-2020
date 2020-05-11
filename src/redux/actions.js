@@ -13,7 +13,10 @@ export function decrement() {
 }
 
 export function asyncInc() {
-    return {
-        type: ASYNC_INC
+    return function (dispatch) {
+        setTimeout(() => {
+            dispatch({ type: ASYNC_INC })
+        }, 2000)
+
     }
 }

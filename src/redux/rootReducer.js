@@ -6,9 +6,7 @@ export function rootReducer(state, action) {
     } else if (action.type === DECREMENT) {
         return state - 1;
     } else if (action.type == ASYNC_INC) {
-        setTimeout(() => {
-            return state + 2
-        }, 2000)
+        return state + 2
     }
 
     return state;
